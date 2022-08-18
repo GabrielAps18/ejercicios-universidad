@@ -1,9 +1,7 @@
 /*Programa Elaborado por: 
 Gabriel Pacheco
-Angel Lopez 
-Alejandro Rodriguez 
 30 de junio de 2021
-Tabla de posiciones de Grupo de fútbol
+Tabla de posiciones de Grupo de fÃºtbol
 Parcial 3*/
 
 #include<iostream>
@@ -27,13 +25,13 @@ int aux3[5][9];
 int i,k,aux,aux2,m;
 
 main(){
-	//set para poder usar caracteres en EspañOL
+	//set para poder usar caracteres en EspaÃ±OL
 	setlocale(LC_ALL, "spanish");
-	cout << "Recomendación: Escribe los nombres de los equipos de forma abreviada, ejemplo..." << endl;
+	cout << "RecomendaciÃ³n: Escribe los nombres de los equipos de forma abreviada, ejemplo..." << endl;
 	cout << "FRA, GER, POR, HUN" << endl << endl;
 	//Ciclo para introducir los equipos del grupo
 	for (i=1; i<=4; i=i+1){
-		cout << "Ingrese el equipo número: "<< i << endl;
+		cout << "Ingrese el equipo nÃºmero: "<< i << endl;
 		cin >> equipos[i];
 		//cout << endl;
 	}
@@ -409,13 +407,13 @@ main(){
 		//Este ciclo valida los enfrenamientos directos de los equipos, le dara la ventaja al que haya ganado su partido en cuanto al posicionamiento del grupo
 	//Empate 1er equipo vs 2do equipo
 	if(puntos[1][8] == puntos[2][8]){
-		//Cada aux almacena un "token" que indica si un equipo ganó el enfrentamiento o empató, el token consiste en Nombre equipo ganador + equipo perdedor
+		//Cada aux almacena un "token" que indica si un equipo ganÃ³ el enfrentamiento o empatÃ³, el token consiste en Nombre equipo ganador + equipo perdedor
 		aux4 = equipos[1].substr(0) + equipos[2].substr(0);
 		aux5 = equipos[2].substr(0) + equipos[1].substr(0);
-		// Si el enfrentamiento de estos 2 equipos termina en empate, el token tendrá un "0" de por medio
+		// Si el enfrentamiento de estos 2 equipos termina en empate, el token tendrÃ¡ un "0" de por medio
 		aux6 = equipos[1].substr(0) + "0" + equipos[2].substr(0);
 		aux7 = equipos[2].substr(0) + "0" + equipos[1].substr(0);
-		// Se buscará en el array win[] el token en cuestion
+		// Se buscarÃ¡ en el array win[] el token en cuestion
 		for(i=1; i<=34; i=i+1){
 			// Si el equipo 1 le gana al 2 no hay cambio (Criterio 2)
 			if(aux4 == win[i]){
@@ -475,13 +473,13 @@ main(){
 	}
 	//Empate 2do equipo vs 3er equipo
 	if(puntos[2][8] == puntos[3][8]){
-		//Cada aux almacena un "token" que indica si un equipo ganó el enfrentamiento o empató, el token consiste en Nombre equipo ganador + equipo perdedor
+		//Cada aux almacena un "token" que indica si un equipo ganÃ³ el enfrentamiento o empatÃ³, el token consiste en Nombre equipo ganador + equipo perdedor
 		aux4 = equipos[2].substr(0) + equipos[3].substr(0);
 		aux5 = equipos[3].substr(0) + equipos[2].substr(0);
-		// Si el enfrentamiento de estos 2 equipos termina en empate, el token tendrá un "0" de por medio
+		// Si el enfrentamiento de estos 2 equipos termina en empate, el token tendrÃ¡ un "0" de por medio
 		aux6 = equipos[2].substr(0) + "0" + equipos[3].substr(0);
 		aux7 = equipos[3].substr(0) + "0" + equipos[2].substr(0);
-		// Se buscará en el array win[] el token en cuestion
+		// Se buscarÃ¡ en el array win[] el token en cuestion
 		for(i=1; i<=34; i=i+1){
 			// Si el equipo 2 le gana al 3 no hay cambio (Criterio 2)
 			if(aux4 == win[i]){
@@ -542,13 +540,13 @@ main(){
 	}
 	//Empate 3er equipo vs 4to equipo
 	if(puntos[3][8] == puntos[4][8]){
-		//Cada aux almacena un "token" que indica si un equipo ganó el enfrentamiento o empató, el token consiste en Nombre equipo ganador + equipo perdedor
+		//Cada aux almacena un "token" que indica si un equipo ganÃ³ el enfrentamiento o empatÃ³, el token consiste en Nombre equipo ganador + equipo perdedor
 		aux4 = equipos[3].substr(0) + equipos[4].substr(0);
 		aux5 = equipos[4].substr(0) + equipos[3].substr(0);
-		// Si el enfrentamiento de estos 2 equipos termina en empate, el token tendrá un "0" de por medio
+		// Si el enfrentamiento de estos 2 equipos termina en empate, el token tendrÃ¡ un "0" de por medio
 		aux6 = equipos[3].substr(0) + "0" + equipos[4].substr(0);
 		aux7 = equipos[4].substr(0) + "0" + equipos[3].substr(0);
-		// Se buscará en el array win[] el token en cuestion
+		// Se buscarÃ¡ en el array win[] el token en cuestion
 		for(i=1; i<=34; i=i+1){
 			// Si el equipo 3 le gana al 4 no hay cambio (Criterio 2)
 			if(aux4 == win[i]){
@@ -608,7 +606,7 @@ main(){
 	}
 	fin:
 	// despues de que todos los partidos hayan sido pasados por cada unos de los criterios, se imprimira la tabla segun el orden correspondiente
-	cout << "País	" << "Juegos " << "Ganados " << "Empatados " << "Perdidos " << "GF	" << "GC	" <<  "DIF	" << "PTS" << endl << endl;
+	cout << "PaÃ­s	" << "Juegos " << "Ganados " << "Empatados " << "Perdidos " << "GF	" << "GC	" <<  "DIF	" << "PTS" << endl << endl;
 	for (i=1; i<=4; i=i+1){
 		cout << equipos[i] << "	" << 
 		puntos[i][1] << "	" <<
