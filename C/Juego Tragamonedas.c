@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
 #include <string.h>
 #include <ctype.h>
 #include <math.h>
@@ -16,24 +15,12 @@ int main (){
 	float DINERO, DIN_JUGADO, DIF_DINERO, DIN_MAQUINA;
 	char  ICON1, ICON2, ICON3, ICON4;
 	
-	
 	do{
 		DINERO = 0;
 		DIN_MAQUINA = 0;
 		system("cls");
-		
-		//Numero de jugadores o partidas jugadas
-		FILE * JUGADORES = fopen("D:/jugadores.txt", "rb");
-		
-		int NUM_JUG;
-		while(feof(JUGADORES) == 0){
-			fscanf(JUGADORES, "%d", &NUM_JUG);
-			NUM_JUG += 1;
-		}
-		fclose(JUGADORES);
 		// Validamos el numero a ingresar al menu
   		do{
-  			printf("%d\n", NUM_JUG);
   			printf("Menu");
   			printf("\n\t1-. Jugar");
   			printf("\n\t2-. Registro de jugadas");
@@ -143,15 +130,20 @@ int main (){
 								DIN_JUGADO = DINERO + DIN_JUGADO;
 								DIF_DINERO = DIF_DINERO - DINERO;
 								VECES = VECES - 1;
-								for (i = 0; i <= 6; i++){
-									Sleep(400);
-									ICON1 = formas(RANDOM = rand() % 8);
-									ICON2 = formas(RANDOM = rand() % 8);
-									ICON3 = formas(RANDOM = rand() % 8);
-									ICON4 = formas(RANDOM = rand() % 8);						
-
-									system("cls");
-									printf("\n \t>>>>>> %c %c %c %c <<<<<<\n", ICON1, ICON2, ICON3, ICON4);
+								for (i = 0; i <= 0; i++){
+									//for (j = 0; j <= 2; j++){
+										ICON1 = formas(RANDOM = rand() % 8);
+										ICON2 = formas(RANDOM = rand() % 8);
+										ICON3 = formas(RANDOM = rand() % 8);
+										ICON4 = formas(RANDOM = rand() % 8);
+								
+										//if (j == 1){
+											system("cls");
+											printf("\n \t>>>>>> %c %c %c %c <<<<<<\n", ICON1, ICON2, ICON3, ICON4);
+										/*}else{
+											printf("\n\t%c %c %c %c\t\n", ICON1, ICON2, ICON3, ICON4);
+										}*/
+									//}
 								}
 								if(ICON1 == ICON2 && ICON2 == ICON3 && ICON3 == ICON4){
 									if(DIN_MAQUINA < (DINERO * 3)){
@@ -160,7 +152,7 @@ int main (){
 										ICON2 = 4;
 										ICON3 = 5;
 										ICON4 = 6;
-										system("cls");
+										
 										printf("\n \t>>>>>> %c %c %c %c <<<<<<\n", ICON1, ICON2, ICON3, ICON4);
 										printf("\nOH VAYA... HAZ PERDIDO\n\n");
 										system("pause");
@@ -181,7 +173,7 @@ int main (){
 										ICON2 = 3;
 										ICON3 = 5;
 										ICON4 = 6;
-										system("cls");
+										
 										printf("\n \t>>>>>> %c %c %c %c <<<<<<\n", ICON1, ICON2, ICON3, ICON4);
 										printf("\nOH VAYA... HAZ PERDIDO\n\n");
 										system("pause");
@@ -201,7 +193,7 @@ int main (){
 										ICON2 = 4;
 										ICON3 = 6;
 										ICON4 = 5;
-										system("cls");
+										
 										printf("\n \t>>>>>> %c %c %c %c <<<<<<\n", ICON1, ICON2, ICON3, ICON4);
 										printf("\nOH VAYA... HAZ PERDIDO\n\n");
 										system("pause");
@@ -221,7 +213,7 @@ int main (){
 										ICON2 = 3;
 										ICON3 = 6;
 										ICON4 = 5;
-										system("cls");
+										
 										printf("\n \t>>>>>> %c %c %c %c <<<<<<\n", ICON1, ICON2, ICON3, ICON4);
 										printf("\nOH VAYA... HAZ PERDIDO\n\n");
 										system("pause");
@@ -241,7 +233,7 @@ int main (){
 										ICON2 = 5;
 										ICON3 = 4;
 										ICON4 = 3;
-										system("cls");
+										
 										printf("\n \t>>>>>> %c %c %c %c <<<<<<\n", ICON1, ICON2, ICON3, ICON4);
 										printf("\nOH VAYA... HAZ PERDIDO\n\n");
 										system("pause");
@@ -262,13 +254,7 @@ int main (){
 							system("pause");
 							break;
 						case 2:
-							salir: ;
-							//Acutalizar jugador	
-							FILE * JUGADORES = fopen("D:/jugadores.txt", "w");
-							fprintf(JUGADORES, "%d", NUM_JUG);
-							fflush(JUGADORES);
-							fclose(JUGADORES);
-								
+							salir:
 							SALIR = 4;
 							system("cls");
 							printf("\n\t\t Gracias por jugar\n\n");
